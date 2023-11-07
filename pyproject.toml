@@ -14,7 +14,7 @@ version = "1.17.9"
 homepage = "https://github.com/cmake-wheel/cmeel-clp"
 
 [tool.cmeel]
-build-number = 0
+build-number = 1
 has-sitelib = false
 run-tests = false
 
