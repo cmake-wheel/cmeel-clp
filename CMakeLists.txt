@@ -33,7 +33,7 @@ ExternalProject_Add(
     "--with-coinutils-incdir=${CoinUtils_INCLUDE_DIRS}"
   BUILD_COMMAND "make" "-j${CMEEL_JOBS}"
   TEST_COMMAND "make" "check"
-  INSTALL_COMMAND "make" "install"
+  INSTALL_COMMAND "make" "install" "-j1"
   COMMAND
     "${CMAKE_COMMAND}" "-E" "rm" "${CMAKE_INSTALL_PREFIX}/lib/lib${NAME}.la"
     "${CMAKE_INSTALL_PREFIX}/lib/lib${NAME}Solver.la")
