@@ -35,7 +35,8 @@ ExternalProject_Add(
   TEST_COMMAND "make" "check"
   INSTALL_COMMAND "make" "install"
   COMMAND "${CMAKE_COMMAND}" "-E" "rm"
-          "${CMAKE_INSTALL_PREFIX}/lib/lib${NAME}.la")
+          "${CMAKE_INSTALL_PREFIX}/lib/lib${NAME}.la"
+          "${CMAKE_INSTALL_PREFIX}/lib/lib${NAME}Solver.la")
 
 # dummy file for install target
 install(FILES README.md DESTINATION share/cmeel-${NAME}/)
