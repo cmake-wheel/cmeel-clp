@@ -20,6 +20,12 @@ endif()
 
 string(REPLACE ";" " " CoinUtils_LDFLAGS_STR "${CoinUtils_LDFLAGS}")
 
+if(APPLE)
+  set(ORIGIN "@loader_path")
+else()
+  set(ORIGIN "\$\$ORIGIN")
+endif()
+
 include(ExternalProject)
 ExternalProject_Add(
   ${NAME}
@@ -28,6 +34,7 @@ ExternalProject_Add(
       OFF
   BUILD_IN_SOURCE ON
   CONFIGURE_COMMAND
+    ${CMAKE_COMMAND} "-E" "env" "LDFLAGS=-Wl,-rpath,'${ORIGIN}/../lib'" "--"
     "./configure" "--prefix=${CMAKE_INSTALL_PREFIX}"
     "--with-coinutils-lib=${CoinUtils_LDFLAGS_STR}"
     "--with-coinutils-incdir=${CoinUtils_INCLUDE_DIRS}"
