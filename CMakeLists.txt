@@ -30,8 +30,8 @@ include(ExternalProject)
 ExternalProject_Add(
   ${NAME}
   URL "https://github.com/coin-or/${NAME}/archive/refs/tags/releases/${VERSION}.tar.gz"
-      DOWNLOAD_EXTRACT_TIMESTAMP
-      OFF
+  URL_HASH "SHA1=636ce7aafbb8fec6755b14551ded1a3261fe01de"
+  DOWNLOAD_EXTRACT_TIMESTAMP OFF
   BUILD_IN_SOURCE ON
   CONFIGURE_COMMAND
     ${CMAKE_COMMAND} "-E" "env" "LDFLAGS=-Wl,-rpath,'${ORIGIN}/../lib'" "--"

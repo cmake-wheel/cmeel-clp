@@ -16,6 +16,7 @@ homepage = "https://github.com/cmake-wheel/cmeel-clp"
 [tool.cmeel]
 has-sitelib = false
 run-tests = false
+upstream-release = "1.17.9"
 
 [tool.tomlsort]
 all = true
