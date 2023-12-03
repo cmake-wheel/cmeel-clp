@@ -12,6 +12,7 @@ version = "1.17.9.1"
 
 [project.urls]
 homepage = "https://github.com/cmake-wheel/cmeel-clp"
+upstream = "https://github.com/coin-or/clp"
 
 [tool.cmeel]
 has-sitelib = false
