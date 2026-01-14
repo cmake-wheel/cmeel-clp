@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
 
+set(ORG coin-or)
 set(NAME Clp)
-set(VERSION "1.17.9")
+set(VERSION "1.17.10")
+set(EXT tar.gz)
+set(SHA256 0d79ece896cdaa4a3855c37f1c28e6c26285f74d45f635046ca0b6d68a509885)
 
-project(cmeel-${NAME} VERSION ${CMAKE_VERSION})
+project("cmeel-${NAME}" VERSION "${VERSION}")
 
 include(FindPkgConfig)
 pkg_check_modules(CoinUtils REQUIRED coinutils)
@@ -29,8 +32,8 @@ endif()
 include(ExternalProject)
 ExternalProject_Add(
   ${NAME}
-  URL "https://github.com/coin-or/${NAME}/archive/refs/tags/releases/${VERSION}.tar.gz"
-  URL_HASH "SHA1=636ce7aafbb8fec6755b14551ded1a3261fe01de"
+  URL "https://github.com/${ORG}/${NAME}/archive/refs/tags/releases/${VERSION}.${EXT}"
+  URL_HASH "SHA256=${SHA256}"
   DOWNLOAD_EXTRACT_TIMESTAMP OFF
   BUILD_IN_SOURCE ON
   CONFIGURE_COMMAND
@@ -46,4 +49,4 @@ ExternalProject_Add(
     "${CMAKE_INSTALL_PREFIX}/lib/lib${NAME}Solver.la")
 
 # dummy file for install target
-install(FILES README.md DESTINATION share/cmeel-${NAME}/)
+install(FILES "README.md" DESTINATION "share/cmeel-${NAME}/")
