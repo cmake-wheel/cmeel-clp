@@ -15,7 +15,7 @@ homepage = "https://github.com/cmake-wheel/cmeel-clp"
 upstream = "https://github.com/coin-or/clp"
 
 [tool.cmeel]
-build-number = 1
+build-number = 2
 has-sitelib = false
 run-tests = false
 
