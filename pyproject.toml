@@ -7,8 +7,8 @@ dependencies = ["cmeel-coinutils"]
 description = "cmeel distribution for clp"
 license = "EPL"
 name = "cmeel-clp"
-requires-python = ">= 3.8"
-version = "1.17.9.1"
+requires-python = ">= 3.10"
+version = "1.17.11"
 
 [project.urls]
 homepage = "https://github.com/cmake-wheel/cmeel-clp"
@@ -17,7 +17,6 @@ upstream = "https://github.com/coin-or/clp"
 [tool.cmeel]
 has-sitelib = false
 run-tests = false
-upstream-release = "1.17.9"
 
 [tool.tomlsort]
 all = true

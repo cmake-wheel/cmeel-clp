@@ -1,10 +1,11 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 4.0)
 
 set(ORG coin-or)
 set(NAME Clp)
-set(VERSION "1.17.10")
+set(VERSION "1.17.11")
 set(EXT tar.gz)
-set(SHA256 0d79ece896cdaa4a3855c37f1c28e6c26285f74d45f635046ca0b6d68a509885)
+set(SHA256 2c078e174dc1a7a308e091b6256fb34b4017897fc140ea707ba207b2913ea46d)
+set(TAG_PREFIX releases/)
 
 project("cmeel-${NAME}" VERSION "${VERSION}")
 
@@ -32,7 +33,7 @@ endif()
 include(ExternalProject)
 ExternalProject_Add(
   ${NAME}
-  URL "https://github.com/${ORG}/${NAME}/archive/refs/tags/releases/${VERSION}.${EXT}"
+  URL "https://github.com/${ORG}/${NAME}/archive/refs/tags/${TAG_PREFIX}${VERSION}.${EXT}"
   URL_HASH "SHA256=${SHA256}"
   DOWNLOAD_EXTRACT_TIMESTAMP OFF
   BUILD_IN_SOURCE ON
