@@ -5,7 +5,7 @@ requires = ["cmeel-coinutils", "cmeel[build]"]
 [project]
 dependencies = ["cmeel-coinutils"]
 description = "cmeel distribution for clp"
-license = "EPL"
+license = " EPL-2.0"
 name = "cmeel-clp"
 requires-python = ">= 3.10"
 version = "1.17.11"
@@ -15,6 +15,7 @@ homepage = "https://github.com/cmake-wheel/cmeel-clp"
 upstream = "https://github.com/coin-or/clp"
 
 [tool.cmeel]
+build-number = 1
 has-sitelib = false
 run-tests = false
 
